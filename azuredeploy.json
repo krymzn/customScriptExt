@@ -244,9 +244,9 @@
             "autoUpgradeMinorVersion":true,
             "settings": {
                 "fileUris": [
-                    "https://raw.githubusercontent.com/krymzn/customScriptExt/master/.ps1"
+                    "https://raw.githubusercontent.com/krymzn/customScriptExt/master/psscript.ps1"
                 ],
-                "commandToExecute": "powershell.exe -ExecutionPolicy Unrestricted -File installWebServer.ps1"
+                "commandToExecute": "powershell.exe -ExecutionPolicy Unrestricted -File psscript.ps1"
             }
         }
     }        
