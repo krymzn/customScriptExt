@@ -22,6 +22,7 @@ Function Extract-FileFromWeb {
     $download = 'https://github.com/microsoft/MCW-Serverless-architecture/archive/master.zip'
     $destination = 'C:\master.zip'
     $webClient.DownloadFile($download, $destination)
+    Expand-Archive $destination -Force
 }
 
 Disable-InternetExplorerESC
