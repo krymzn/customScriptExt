@@ -1,3 +1,5 @@
+Start-Transcript -Path C:\WindowsAzure\Logs\CloudLabsCustomScriptExtension.txt -Append
+
 $webClient = New-Object System.Net.WebClient
 
 Function Disable-InternetExplorerESC {
@@ -18,7 +20,8 @@ Function Install-Chocolatey {
 
 Function Extract-FileFromWeb {
     $download = 'https://github.com/microsoft/MCW-Serverless-architecture/archive/master.zip'
-    $webClient.DownloadFile($download)
+    $destination = 'C:\master.zip'
+    $webClient.DownloadFile($download, $destination)
 }
 
 Disable-InternetExplorerESC
