@@ -232,10 +232,10 @@
         {
             "type": "Microsoft.Compute/virtualMachines/extensions",
             "apiVersion": "2019-12-01",
-            "name": "[concat(variables('vmName'),'/', 'InstallWebServer')]",
+            "name": "[concat(parameters('vmName'),'/', 'InstallWebServer')]",
             "location": "[parameters('location')]",
             "dependsOn": [
-                 "[concat('Microsoft.Compute/virtualMachines/',variables('vmName'))]"
+                 "[concat('Microsoft.Compute/virtualMachines/',parameters('vmName'))]"
             ],
             "properties": {
             "publisher": "Microsoft.Compute",
@@ -244,7 +244,7 @@
             "autoUpgradeMinorVersion":true,
             "settings": {
                 "fileUris": [
-                    "https://raw.githubusercontent.com/krymzn/customScriptExt/master/psscript.ps1"
+                    "https://raw.githubusercontent.com/krymzn/customScriptExt/master/.ps1"
                 ],
                 "commandToExecute": "powershell.exe -ExecutionPolicy Unrestricted -File installWebServer.ps1"
             }
